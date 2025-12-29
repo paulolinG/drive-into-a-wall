@@ -1,0 +1,8 @@
+# Project place file
+/drive-into-a-wall.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
