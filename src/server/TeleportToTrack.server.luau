@@ -18,7 +18,7 @@ TeleportEvent.OnServerEvent:Connect(function(player: Player, trackName: string)
 	end
 	local character = player.Character
 	if character and character:FindFirstChild("HumanoidRootPart") then
-		local targetPos = trackSpawn.Position + Vector3.new(0, 3, 0)	
+		local targetPos = trackSpawn.Position + Vector3.new(0, 3, 0)
 		character:PivotTo(CFrame.new(targetPos))
 	end
 end)

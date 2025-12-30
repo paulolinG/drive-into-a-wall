@@ -6,7 +6,6 @@ local myDataStore = DataStoreService:GetDataStore("JeepTycoon_Data_v1")
 
 -- [[ 1. LOAD DATA WHEN PLAYER JOINS ]] --
 Players.PlayerAdded:Connect(function(player)
-
 	-- Create Leaderstats Folder (Stores the visible stats)
 	local leaderstats = Instance.new("Folder")
 	leaderstats.Name = "leaderstats"
@@ -41,7 +40,9 @@ Players.PlayerAdded:Connect(function(player)
 	-- We create the UI here so it automatically links to the new money value
 	player.CharacterAdded:Connect(function()
 		local existingGui = player.PlayerGui:FindFirstChild("CoinHud")
-		if existingGui then existingGui:Destroy() end
+		if existingGui then
+			existingGui:Destroy()
+		end
 
 		local screenGui = Instance.new("ScreenGui")
 		screenGui.Name = "CoinHud"
@@ -55,16 +56,28 @@ Players.PlayerAdded:Connect(function(player)
 		frame.BorderSizePixel = 0
 		frame.Parent = screenGui
 
-		local corner = Instance.new("UICorner"); corner.CornerRadius = UDim.new(0, 12); corner.Parent = frame
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(0, 12)
+		corner.Parent = frame
 
 		local title = Instance.new("TextLabel")
-		title.Text = "COINS"; title.Size = UDim2.new(1, 0, 0.4, 0); title.BackgroundTransparency = 1
-		title.TextColor3 = Color3.fromRGB(255, 200, 50); title.Font = Enum.Font.FredokaOne; title.TextSize = 18; title.Parent = frame
+		title.Text = "COINS"
+		title.Size = UDim2.new(1, 0, 0.4, 0)
+		title.BackgroundTransparency = 1
+		title.TextColor3 = Color3.fromRGB(255, 200, 50)
+		title.Font = Enum.Font.FredokaOne
+		title.TextSize = 18
+		title.Parent = frame
 
 		local amount = Instance.new("TextLabel")
 		amount.Text = tostring(coins.Value) -- Set initial text
-		amount.Size = UDim2.new(1, 0, 0.6, 0); amount.Position = UDim2.new(0, 0, 0.4, 0); amount.BackgroundTransparency = 1
-		amount.TextColor3 = Color3.fromRGB(255, 255, 255); amount.Font = Enum.Font.FredokaOne; amount.TextSize = 28; amount.Parent = frame
+		amount.Size = UDim2.new(1, 0, 0.6, 0)
+		amount.Position = UDim2.new(0, 0, 0.4, 0)
+		amount.BackgroundTransparency = 1
+		amount.TextColor3 = Color3.fromRGB(255, 255, 255)
+		amount.Font = Enum.Font.FredokaOne
+		amount.TextSize = 28
+		amount.Parent = frame
 
 		-- Update UI when money changes
 		coins.Changed:Connect(function(newVal)

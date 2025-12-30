@@ -4,9 +4,9 @@ local Players = game:GetService("Players")
 
 -- CONFIGURATION: Set your prices here
 local CAR_PRICES = {
-	Jeep = 0,       -- Free starter car
-	Jeep2 = 500,    -- Mid-tier
-	Jeep3 = 2000    -- High-tier
+	Jeep = 0, -- Free starter car
+	Jeep2 = 500, -- Mid-tier
+	Jeep3 = 2000, -- High-tier
 }
 
 -- 1. SETUP REMOTES (Communication between Client and Server)
@@ -34,7 +34,9 @@ function shopEvent.OnServerInvoke(player, action, carName)
 	local ownedFolder = player:FindFirstChild("OwnedCars")
 	local price = CAR_PRICES[carName]
 
-	if not coins or not ownedFolder or not price then return "Error" end
+	if not coins or not ownedFolder or not price then
+		return "Error"
+	end
 
 	if action == "Buy" then
 		-- CHECK IF THEY CAN AFFORD IT
@@ -55,7 +57,6 @@ function shopEvent.OnServerInvoke(player, action, carName)
 		else
 			return "TooPoor"
 		end
-
 	elseif action == "Spawn" then
 		-- CHECK IF THEY OWN IT
 		if ownedFolder:FindFirstChild(carName) then

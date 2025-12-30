@@ -6,7 +6,9 @@ local CarsFolder = workspace:WaitForChild("Cars")
 event.OnServerEvent:Connect(function(player, wallType, carModel)
 	-- 1. SECURITY CHECK: Verify stats exist
 	local stats = WallConfig.Stats[wallType]
-	if not stats then return end
+	if not stats then
+		return
+	end
 
 	-- 2. GIVE MONEY
 	local leaderstats = player:FindFirstChild("leaderstats")
@@ -17,7 +19,6 @@ event.OnServerEvent:Connect(function(player, wallType, carModel)
 	-- 3. DAMAGE CAR
 	-- We check if carModel exists and is actually inside the Cars folder
 	if carModel and carModel.Parent == CarsFolder then
-
 		local carScript = carModel:FindFirstChild("CarScript")
 
 		if carScript then

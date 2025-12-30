@@ -1,7 +1,7 @@
 local WallConfig = {}
 
 -- [[ MASTER SETTINGS ]] --
--- Change everything here! 
+-- Change everything here!
 -- Even the UI and Generator will look at this list.
 
 WallConfig.Stats = {
@@ -14,7 +14,7 @@ WallConfig.Stats = {
 		Thick = 1.5,
 		DebrisCount = 10,
 		DebrisSize = 2,
-		Texture = "rbxassetid://241551622" -- Shard
+		Texture = "rbxassetid://241551622", -- Shard
 	},
 
 	Wood = {
@@ -26,7 +26,7 @@ WallConfig.Stats = {
 		Thick = 2.0,
 		DebrisCount = 12,
 		DebrisSize = 1.5,
-		Texture = "rbxassetid://243943684" -- Rock/Chunk
+		Texture = "rbxassetid://243943684", -- Rock/Chunk
 	},
 
 	Brick = {
@@ -38,7 +38,7 @@ WallConfig.Stats = {
 		Thick = 4.0,
 		DebrisCount = 15,
 		DebrisSize = 3,
-		Texture = "rbxassetid://243943684"
+		Texture = "rbxassetid://243943684",
 	},
 
 	Concrete = {
@@ -50,7 +50,7 @@ WallConfig.Stats = {
 		Thick = 6.0,
 		DebrisCount = 20,
 		DebrisSize = 5,
-		Texture = "rbxassetid://243943684"
+		Texture = "rbxassetid://243943684",
 	},
 
 	Neon = {
@@ -62,8 +62,8 @@ WallConfig.Stats = {
 		Thick = 1.0,
 		DebrisCount = 25,
 		DebrisSize = 2,
-		Texture = "rbxassetid://241551622"
-	}
+		Texture = "rbxassetid://241551622",
+	},
 }
 
 return WallConfig

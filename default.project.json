@@ -27,10 +27,7 @@
 
     "Workspace": {
       "$className": "Workspace",
-      "$ignoreUnknownInstances": true,
-      "Scripts": {
-        "$path": "src/workspace_scripts"
-      }
+      "$ignoreUnknownInstances": true
     }
   }
 }
