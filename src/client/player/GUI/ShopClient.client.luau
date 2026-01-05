@@ -21,6 +21,7 @@ local CarConfig = require(Config:WaitForChild("CarConfig"))
 local MiscModules = ReplicatedStorage:WaitForChild("Modules")
 local ColorPalette = require(MiscModules:WaitForChild("ColorPalette"))
 
+-- Get the player menu instance and insert the tab content for car inventory
 local menu = PlayerMenu.getInstance()
 
 local ownedCarsListTrackColor = ColorPalette.ElectricPurple
@@ -37,17 +38,20 @@ local carShopBtnIconColor = ColorPalette.PureWhite
 local carShopBtnIconImage = "rbxassetid://90459802847380"
 local carShopBtn = LabelledButton.create(
 	"ShopButton",
-	"SHOP", 
-	carShopBtnPosition, 
-	carShopBtnIconImage, 
-	carShopBtnColor, 
-	carShopBtnTextColor, 
+	"SHOP",
+	carShopBtnPosition,
+	carShopBtnIconImage,
+	carShopBtnColor,
+	carShopBtnTextColor,
 	carShopBtnBorderColor,
 	carShopBtnIconColor,
-	menu.Open
+	function()
+		menu.Open()
+		menu.CurrentTab = "GARAGE"
+		menu.GARAGE()
+	end
 )
 carShopBtn.Instance.Parent = gui
-
 
 for _, car in ipairs(CarConfig.Config) do
 	local carEntryName = car.Name

@@ -23,7 +23,7 @@ function PlayerMenu.getInstance()
 		local menuTextColor = ColorPalette.PureWhite
 		local menuBorderColor = ColorPalette.HotPink
 		local menuBackgroundColor = ColorPalette.SolidBlack
-		local tabNames = { "GARAGE", "TRACKS" }
+		local tabNames = { "GARAGE", "TRACKS", "PASSES" }
 		instance =
 			PlayerMenuFactory.create(menuName, menuTitle, menuTextColor, menuBorderColor, menuBackgroundColor, tabNames)
 		instance.Parent = gui
